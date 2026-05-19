@@ -7,7 +7,6 @@
   <meta name="description" content="Bolsos de crochet, gorros, bufandas, mitones y accesorios con lentejuelas hechos a mano. Descubre la colección de Paso a Paso." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
   <style>
     :root {
@@ -498,7 +497,7 @@
       <p class="section-label">Colección</p>
       <h2 class="section-title">Todo hecho <em>a mano,</em><br>nada en serie.</h2>
       <div class="products-grid">
-        <a href="bolsos.html" style="text-decoration:none"><div class="prod-card bg-mustard prod-featured">
+        <div class="prod-card bg-mustard prod-featured">
           <div class="prod-emoji-big">👜</div>
           <div class="prod-info">
             <p class="prod-name">Bolsos de red</p>
@@ -513,14 +512,14 @@
             <p class="prod-desc">Crochet con lentejuelas</p>
           </div>
         </div>
-        <a href="gorros.html" style="text-decoration:none"><div class="prod-card bg-lime">
+        <div class="prod-card bg-lime">
           <div class="prod-emoji-big">🧢</div>
           <div class="prod-info">
             <p class="prod-name">Gorros</p>
             <p class="prod-desc">Tejidos a mano</p>
           </div>
         </div>
-        <a href="bufandas.html" style="text-decoration:none"><div class="prod-card bg-red">
+        <div class="prod-card bg-red">
           <div class="prod-emoji-big">🧣</div>
           <div class="prod-info">
             <p class="prod-name">Bufandas</p>
@@ -611,23 +610,5 @@
     </ul>
   </footer>
 
-
-  <script>
-    const links = {
-      'Bolsos de red': 'bolsos.html',
-      'Collares': 'collares.html',
-      'Gorros': 'gorros.html',
-      'Bufandas': 'bufandas.html',
-      'Mitones': 'mitones.html',
-      'Cinturones': 'cinturones.html',
-    };
-    document.querySelectorAll('.prod-card').forEach(card => {
-      const name = card.querySelector('.prod-name')?.textContent.trim();
-      if (links[name]) {
-        card.style.cursor = 'pointer';
-        card.addEventListener('click', () => window.location.href = links[name]);
-      }
-    });
-  </script>
 </body>
 </html>
