@@ -3,150 +3,647 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Collares de crochet — Paso a Paso</title>
-  <meta name="description" content="Collares de crochet con lentejuelas hechos a mano. La novedad de esta temporada." />
+
+  <title>Collares diferentes — Paso a Paso</title>
+  <meta name="description" content="Collares diferentes, coloridos y con brillo por Paso a Paso. Piezas especiales para levantar cualquier look." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700&display=swap" rel="stylesheet" />
+
+  <style>
+
+    :root {
+      --azul: #9CCEFF;
+      --azul-claro: #cfe0f6;
+      --granate: #7a0d2a;
+      --granate-oscuro: #4d0719;
+      --granate-suave: #9b1637;
+      --crema: #fff8ec;
+      --tinta: #24030c;
+      --borde: rgba(122, 13, 42, 0.18);
+      --sombra: 0 24px 70px rgba(77, 7, 25, 0.16);
+      --radio: 28px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top left, rgba(255,248,236,0.42), transparent 34rem),
+        linear-gradient(180deg, var(--azul) 0%, #9CCEFF 38%, var(--crema) 100%);
+      color: var(--granate);
+      font-family: 'DM Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: #9CCEFF;
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .nav {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.25rem;
+      text-decoration: none;
+      letter-spacing: -0.01em;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.04em;
+      opacity: 0.72;
+      transition: opacity 180ms ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible { opacity: 1; }
+
+    .ig-link,
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      line-height: 1;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+
+    .ig-link {
+      padding: 10px 16px;
+      background: var(--granate);
+      color: var(--azul-claro);
+      font-size: 0.78rem;
+    }
+
+    .ig-link:hover,
+    .button:hover { transform: translateY(-2px); }
+
+    .icon { width: 16px; height: 16px; flex: 0 0 auto; }
+
+    main { position: relative; }
+
+    .page-hero {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(58px, 8vw, 94px) 0 clamp(42px, 6vw, 76px);
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.55fr);
+      gap: clamp(32px, 6vw, 74px);
+      align-items: end;
+    }
+
+    .back-link {
+      display: inline-flex;
+      margin-bottom: 22px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: rgba(122, 13, 42, 0.68);
+    }
+
+    .back-link:hover { color: var(--granate); }
+
+    .eyebrow {
+      margin: 0 0 16px;
+      font-size: 0.73rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 700;
+      opacity: 0.64;
+    }
+
+    .page-title,
+    .section-title,
+    .cta-title {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    .page-title {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(3.3rem, 8vw, 7.4rem);
+    }
+
+    .page-title em,
+    .section-title em,
+    .cta-title em {
+      font-style: italic;
+      color: var(--granate-suave);
+    }
+
+    .page-copy {
+      max-width: 620px;
+      margin: 24px 0 0;
+      font-size: clamp(1rem, 1.45vw, 1.18rem);
+      color: rgba(122, 13, 42, 0.74);
+    }
+
+    .page-note {
+      padding: 26px;
+      border-radius: var(--radio);
+      border: 1px solid var(--borde);
+      background: rgba(255, 248, 236, 0.36);
+      box-shadow: 0 16px 42px rgba(77, 7, 25, 0.08);
+    }
+
+    .page-note strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1rem;
+    }
+
+    .page-note p {
+      margin: 0;
+      color: rgba(122, 13, 42, 0.68);
+      font-size: 0.95rem;
+    }
+
+    .section {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 0 0 clamp(72px, 9vw, 112px);
+    }
+
+    .products-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 28px;
+      margin-bottom: 26px;
+    }
+
+    .section-title {
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+    }
+
+    .products-tip {
+      max-width: 440px;
+      margin: 0;
+      color: rgba(122, 13, 42, 0.68);
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .product-card {
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+      border-radius: var(--radio);
+      overflow: hidden;
+      background: rgba(255, 248, 236, 0.46);
+      border: 1px solid var(--borde);
+      box-shadow: 0 16px 42px rgba(77, 7, 25, 0.08);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--sombra);
+      background: rgba(255, 248, 236, 0.62);
+    }
+
+    .product-image {
+      min-height: 280px;
+      aspect-ratio: 4 / 5;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(122, 13, 42, 0.08), rgba(255,248,236,0.3)),
+        var(--azul);
+      border-bottom: 1px solid var(--borde);
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .photo-placeholder {
+      width: calc(100% - 38px);
+      height: calc(100% - 38px);
+      border-radius: 24px;
+      border: 1.5px dashed rgba(122, 13, 42, 0.32);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 22px;
+      color: rgba(122, 13, 42, 0.62);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      background: rgba(255, 248, 236, 0.16);
+    }
+
+    .badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: var(--granate);
+      color: var(--azul-claro);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .product-info {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 22px;
+    }
+
+    .product-name {
+      margin: 0 0 10px;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.65rem;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+    }
+
+    .product-desc {
+      margin: 0 0 22px;
+      color: rgba(122, 13, 42, 0.68);
+      font-size: 0.95rem;
+    }
+
+    .product-footer {
+      margin-top: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .price-placeholder {
+      color: rgba(122, 13, 42, 0.48);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .product-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--granate);
+      color: var(--azul-claro);
+      text-decoration: none;
+      font-size: 0.82rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .product-link:hover { background: var(--granate-oscuro); }
+
+    .cta-band {
+      background: var(--granate);
+      color: var(--azul-claro);
+    }
+
+    .cta-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: clamp(58px, 8vw, 96px) 0;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.55fr);
+      gap: 32px;
+      align-items: center;
+    }
+
+    .cta-title {
+      margin: 0;
+      font-size: clamp(2.6rem, 6vw, 5.2rem);
+    }
+
+    .cta-text {
+      margin: 18px 0 0;
+      color: rgba(207, 224, 246, 0.72);
+      max-width: 52ch;
+    }
+
+    .cta-actions {
+      display: grid;
+      gap: 12px;
+    }
+
+    .cta-card {
+      display: block;
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(207, 224, 246, 0.08);
+      border: 1px solid rgba(207, 224, 246, 0.22);
+      text-decoration: none;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .cta-card:hover {
+      transform: translateY(-3px);
+      background: rgba(207, 224, 246, 0.12);
+    }
+
+    .cta-label {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      opacity: 0.66;
+      font-weight: 700;
+    }
+
+    .cta-value {
+      display: block;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.55rem;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+    }
+
+    .site-footer {
+      border-top: 1px solid var(--borde);
+      padding: 28px 0;
+      background: rgba(255, 248, 236, 0.42);
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      color: rgba(122, 13, 42, 0.62);
+      font-size: 0.86rem;
+    }
+
+    .footer-brand {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 1.1rem;
+      color: var(--granate);
+    }
+
+    @media (max-width: 980px) {
+      .page-hero,
+      .cta-inner { grid-template-columns: 1fr; }
+      .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 680px) {
+      .nav { padding: 14px 0; }
+      .nav-links { display: none; }
+      .ig-link { padding: 10px 12px; font-size: 0; gap: 0; }
+      .ig-link .icon { margin: 0; }
+      .page-title { font-size: clamp(3rem, 15vw, 5rem); }
+      .products-head { display: block; }
+      .products-tip { margin-top: 16px; }
+      .products-grid { grid-template-columns: 1fr; }
+      .product-image { min-height: 240px; }
+      .product-footer { align-items: flex-start; flex-direction: column; }
+      .product-link { width: 100%; }
+      .cta-value { font-size: 1.28rem; }
+    }
+
+  </style>
 </head>
 <body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Navegación principal">
+      <a href="index.html" class="brand">Paso a Paso</a>
 
-  <nav>
-    <a href="index.html" class="nav-logo">Paso a Paso</a>
-    <ul class="nav-links">
-      <li><a href="index.html#coleccion">Colección</a></li>
-      <li><a href="index.html#nosotras">Nosotras</a></li>
-      <li><a href="index.html#contacto">Contacto</a></li>
-    </ul>
-    <a href="https://www.instagram.com/pasoapaso______/" target="_blank" class="nav-ig">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-      @pasoapaso______
-    </a>
-  </nav>
+      <ul class="nav-links">
+        <li><a href="index.html#coleccion">Colección</a></li>
+        <li><a href="index.html#nosotras">Nosotras</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
 
-  <div class="color-strip">
-    <div class="cs" style="background:#c8f03a"></div>
-    <div class="cs" style="background:#e63946"></div>
-    <div class="cs" style="background:#1a5fa8"></div>
-    <div class="cs" style="background:#e8a820"></div>
-    <div class="cs" style="background:#7b2d8b"></div>
-    <div class="cs" style="background:#0e0e0e"></div>
-  </div>
+      <a href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener" class="ig-link" aria-label="Abrir Instagram de Paso a Paso">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        @pasoapaso______
+      </a>
+    </nav>
+  </header>
 
-  <div class="page-header">
-    <a href="index.html" class="back-link">← Volver a la colección</a>
-    <p class="label">Colección Verano · Collares</p>
-    <h1>Collares con <em>lentejuelas</em></h1>
-    <p>Collares de crochet con lentejuelas hechos a mano. La novedad de esta temporada.</p>
-  </div>
+  <main>
+    <section class="page-hero" aria-labelledby="page-title">
+      <div>
+        <a class="back-link" href="index.html#coleccion">← Volver a la colección</a>
+        <p class="eyebrow">Colección verano · Collares</p>
+        <h1 id="page-title" class="page-title">Collares <em>diferentes.</em></h1>
+        <p class="page-copy">Collares con color y brillo para convertir un look sencillo en algo especial. No son de crochet: son piezas distintas dentro del universo Paso a Paso.</p>
+      </div>
 
-  <div class="products-section">
-    <div class="products-grid">
-      <div class="product-card fadein">
-        <div class="product-img">
-          <span class="badge new">Nuevo</span>
-          <!-- Para añadir foto: borra el div .placeholder y pon <img src="tu-foto.jpg" alt="Collar lentejuelas plata"> -->
-          <div class="placeholder">
-            <span class="placeholder-emoji">📿</span>
-            <span class="placeholder-text">Añadir foto</span>
-          </div>
+      <aside class="page-note" aria-label="Nota sobre la colección">
+        <strong>Color y brillo</strong>
+        <p>Jugamos con combinaciones, formas y acabados para que cada collar tenga algo suyo.</p>
+      </aside>
+    </section>
+
+    <section class="section" aria-labelledby="products-title">
+      <div class="products-head">
+        <div>
+          <p class="eyebrow">Productos</p>
+          <h2 id="products-title" class="section-title">Collares <em>con personalidad.</em></h2>
         </div>
-        <div class="product-info">
-          <p class="product-name">Collar lentejuelas plata</p>
-          <p class="product-desc">Collar de crochet con lentejuelas plateadas. Perfecto para noches de verano.</p>
-          <div class="product-footer">
-            <span class="product-price placeholder-price">Añadir precio</span>
-            <a href="https://www.instagram.com/pasoapaso______/" target="_blank" class="btn-ig">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-              Ver en Instagram
-            </a>
+        <p class="products-tip">Cuando tengas fotos, sustituye cada placeholder por la imagen del collar correspondiente.</p>
+      </div>
+
+      <div class="products-grid">
+
+        <article class="product-card">
+          <div class="product-image">
+            <span class="badge">Nuevo</span>
+            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
+            <img src="imagenes/collares/collar-brillo-plata.jpg" alt="Collar brillo plata" />
+            -->
+            <div class="photo-placeholder">Foto pendiente</div>
           </div>
+          <div class="product-info">
+            <h3 class="product-name">Collar brillo plata</h3>
+            <p class="product-desc">Un toque luminoso para looks de verano, noche o prendas básicas.</p>
+            <div class="product-footer">
+              <span class="price-placeholder">Precio por confirmar</span>
+              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <span class="badge">Nuevo</span>
+            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
+            <img src="imagenes/collares/collar-brillo-dorado.jpg" alt="Collar brillo dorado" />
+            -->
+            <div class="photo-placeholder">Foto pendiente</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Collar brillo dorado</h3>
+            <p class="product-desc">Cálido, llamativo y fácil de llevar con escotes sencillos.</p>
+            <div class="product-footer">
+              <span class="price-placeholder">Precio por confirmar</span>
+              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <span class="badge">Nuevo</span>
+            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
+            <img src="imagenes/collares/collar-multicolor.jpg" alt="Collar multicolor" />
+            -->
+            <div class="photo-placeholder">Foto pendiente</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Collar multicolor</h3>
+            <p class="product-desc">Mezcla de tonos para quienes buscan una pieza divertida y nada obvia.</p>
+            <div class="product-footer">
+              <span class="price-placeholder">Precio por confirmar</span>
+              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            
+            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
+            <img src="imagenes/collares/collar-corto.jpg" alt="Collar corto" />
+            -->
+            <div class="photo-placeholder">Foto pendiente</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Collar corto</h3>
+            <p class="product-desc">Formato cerca del cuello, pensado para sumar color sin cargar el look.</p>
+            <div class="product-footer">
+              <span class="price-placeholder">Precio por confirmar</span>
+              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            
+            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
+            <img src="imagenes/collares/collar-especial.jpg" alt="Collar especial" />
+            -->
+            <div class="photo-placeholder">Foto pendiente</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Collar especial</h3>
+            <p class="product-desc">Una pieza con brillo y presencia para que el accesorio sea el centro.</p>
+            <div class="product-footer">
+              <span class="price-placeholder">Precio por confirmar</span>
+              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <div class="product-image">
+            <span class="badge">A medida</span>
+            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
+            <img src="imagenes/collares/collar-personalizado.jpg" alt="Collar personalizado" />
+            -->
+            <div class="photo-placeholder">Foto pendiente</div>
+          </div>
+          <div class="product-info">
+            <h3 class="product-name">Collar personalizado</h3>
+            <p class="product-desc">Cuéntanos qué tonos te gustan y vemos qué podemos preparar.</p>
+            <div class="product-footer">
+              <span class="price-placeholder">Precio por confirmar</span>
+              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band" aria-labelledby="cta-title">
+      <div class="cta-inner">
+        <div>
+          <p class="eyebrow">Pedidos</p>
+          <h2 id="cta-title" class="cta-title">¿Quieres un collar <em>que cambie el look?</em></h2>
+          <p class="cta-text">Escríbenos con el modelo que te gusta. Te contamos disponibilidad, colores y tiempo de preparación.</p>
+        </div>
+
+        <div class="cta-actions">
+          <a class="cta-card" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">
+            <span class="cta-label">Instagram</span>
+            <span class="cta-value">@pasoapaso______</span>
+          </a>
+
+          <a class="cta-card" href="mailto:pasoapasoacc@gmail.com">
+            <span class="cta-label">Email</span>
+            <span class="cta-value">pasoapasoacc@gmail.com</span>
+          </a>
         </div>
       </div>
-      <div class="product-card fadein">
-        <div class="product-img">
-          <span class="badge new">Nuevo</span>
-          <!-- Para añadir foto: borra el div .placeholder y pon <img src="tu-foto.jpg" alt="Collar lentejuelas dorado"> -->
-          <div class="placeholder">
-            <span class="placeholder-emoji">📿</span>
-            <span class="placeholder-text">Añadir foto</span>
-          </div>
-        </div>
-        <div class="product-info">
-          <p class="product-name">Collar lentejuelas dorado</p>
-          <p class="product-desc">Lentejuelas doradas sobre base de crochet. Llamativo y único.</p>
-          <div class="product-footer">
-            <span class="product-price placeholder-price">Añadir precio</span>
-            <a href="https://www.instagram.com/pasoapaso______/" target="_blank" class="btn-ig">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-              Ver en Instagram
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="product-card fadein">
-        <div class="product-img">
-          <span class="badge new">Nuevo</span>
-          <!-- Para añadir foto: borra el div .placeholder y pon <img src="tu-foto.jpg" alt="Collar lentejuelas multicolor"> -->
-          <div class="placeholder">
-            <span class="placeholder-emoji">📿</span>
-            <span class="placeholder-text">Añadir foto</span>
-          </div>
-        </div>
-        <div class="product-info">
-          <p class="product-name">Collar lentejuelas multicolor</p>
-          <p class="product-desc">Mezcla de lentejuelas de colores. La pieza más festiva de la colección.</p>
-          <div class="product-footer">
-            <span class="product-price placeholder-price">Añadir precio</span>
-            <a href="https://www.instagram.com/pasoapaso______/" target="_blank" class="btn-ig">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-              Ver en Instagram
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="product-card fadein">
-        <div class="product-img">
-          <span class="badge new">Nuevo</span>
-          <!-- Para añadir foto: borra el div .placeholder y pon <img src="tu-foto.jpg" alt="Collar corto lentejuelas"> -->
-          <div class="placeholder">
-            <span class="placeholder-emoji">📿</span>
-            <span class="placeholder-text">Añadir foto</span>
-          </div>
-        </div>
-        <div class="product-info">
-          <p class="product-name">Collar corto lentejuelas</p>
-          <p class="product-desc">Versión choker del collar de crochet con lentejuelas.</p>
-          <div class="product-footer">
-            <span class="product-price placeholder-price">Añadir precio</span>
-            <a href="https://www.instagram.com/pasoapaso______/" target="_blank" class="btn-ig">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
-              Ver en Instagram
-            </a>
-          </div>
-        </div>
-      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-brand">Paso a Paso</span>
+      <span>Accesorios hechos a mano · Series pequeñas · No hay dos iguales</span>
     </div>
-  </div>
-
-  <footer>
-    <span class="footer-logo">Paso a Paso</span>
-    <p class="footer-copy">© 2025 Paso a Paso · Accesorios artesanales</p>
   </footer>
-
-  <script>
-    const obs = new IntersectionObserver(entries => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          e.target.style.animationDelay = (i * 0.08) + 's';
-          e.target.classList.add('fadein');
-          obs.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.product-card').forEach(c => obs.observe(c));
-  </script>
-
 </body>
 </html>
