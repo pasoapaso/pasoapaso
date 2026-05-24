@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Bolsos de crochet — Paso a Paso</title>
-  <meta name="description" content="Bolsos de crochet y bolsos de red hechos a mano por Paso a Paso. Series pequeñas, colores vibrantes y piezas irrepetibles." />
+  <meta name="description" content="Bolsos de crochet hechos a mano por Paso a Paso. Piezas ligeras, coloridas y únicas para diario, playa o mercado." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -18,7 +18,7 @@
       --azul-claro: #cfe0f6;
       --granate: #7a0d2a;
       --granate-oscuro: #4d0719;
-      --granate-suave: #9b1637;
+      --granate-suave: #c86c83;
       --crema: #fff8ec;
       --tinta: #24030c;
       --borde: rgba(122, 13, 42, 0.18);
@@ -27,7 +27,6 @@
     }
 
     *, *::before, *::after { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -44,6 +43,7 @@
 
     img { display: block; max-width: 100%; }
     a { color: inherit; }
+    button { font: inherit; }
 
     .site-header {
       position: sticky;
@@ -92,30 +92,44 @@
     .nav-links a:hover,
     .nav-links a:focus-visible { opacity: 1; }
 
-    .ig-link,
-    .button {
+    .ig-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 9px;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      line-height: 1;
-      transition: transform 180ms ease, background 180ms ease, color 180ms ease, border-color 180ms ease;
-    }
-
-    .ig-link {
       padding: 10px 16px;
+      border-radius: 999px;
       background: var(--granate);
       color: var(--azul-claro);
+      text-decoration: none;
       font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1;
+      transition: transform 180ms ease, background 180ms ease;
     }
 
-    .ig-link:hover,
-    .button:hover { transform: translateY(-2px); }
+    .ig-link:hover {
+      transform: translateY(-2px);
+      background: var(--granate-oscuro);
+    }
 
     .icon { width: 16px; height: 16px; flex: 0 0 auto; }
+
+    .saved-nav {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 28px;
+      height: 22px;
+      margin-left: 6px;
+      padding: 0 8px;
+      border-radius: 999px;
+      background: var(--granate);
+      color: var(--azul-claro);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
 
     main { position: relative; }
 
@@ -171,6 +185,8 @@
       color: var(--granate-suave);
     }
 
+    .cta-title em.cta-highlight { color: var(--azul); }
+
     .page-copy {
       max-width: 620px;
       margin: 24px 0 0;
@@ -186,55 +202,72 @@
       box-shadow: 0 16px 42px rgba(77, 7, 25, 0.08);
     }
 
-    .page-note strong {
-      display: block;
-      margin-bottom: 10px;
-      font-size: 1rem;
-    }
+    .page-note strong { display: block; margin-bottom: 10px; font-size: 1rem; }
+    .page-note p { margin: 0; color: rgba(122, 13, 42, 0.68); font-size: 0.95rem; }
 
-    .page-note p {
-      margin: 0;
-      color: rgba(122, 13, 42, 0.68);
-      font-size: 0.95rem;
-    }
-
-    .section {
+    .section,
+    .mix-section,
+    .products-section,
+    .saved-section {
       width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
       padding: 0 0 clamp(72px, 9vw, 112px);
     }
 
+    .section-head,
     .products-head {
-      display: flex;
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(260px, 0.55fr);
+      gap: 32px;
       align-items: end;
-      justify-content: space-between;
-      gap: 28px;
-      margin-bottom: 26px;
+      margin-bottom: 28px;
     }
 
-    .section-title {
-      margin: 0;
-      font-size: clamp(2.2rem, 5vw, 4.4rem);
-    }
+    .section-title { margin: 0; font-size: clamp(2.2rem, 5vw, 4.4rem); }
+    .section-copy, .products-tip { margin: 0; color: rgba(122, 13, 42, 0.68); font-size: 1rem; }
 
-    .products-tip {
-      max-width: 440px;
-      margin: 0;
-      color: rgba(122, 13, 42, 0.68);
+    .featured-carousel {
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      border: 1px solid var(--borde);
+      box-shadow: var(--sombra);
+      background: rgba(255, 248, 236, 0.38);
+      aspect-ratio: 1/1;
     }
 
     .products-grid {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 40px;
     }
 
+    .product-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: auto;
+      padding-top: 22px;
+    }
+
+    .product-price {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--granate);
+      white-space: nowrap;
+    }
+
+    .product-actions .product-link {
+      margin-top: 0;
+    }
     .product-card {
       display: flex;
       min-height: 100%;
       flex-direction: column;
-      border-radius: var(--radio);
       overflow: hidden;
+      border-radius: var(--radio);
       background: rgba(255, 248, 236, 0.46);
       border: 1px solid var(--borde);
       box-shadow: 0 16px 42px rgba(77, 7, 25, 0.08);
@@ -247,114 +280,277 @@
       background: rgba(255, 248, 236, 0.62);
     }
 
-    .product-image {
-      min-height: 280px;
-      aspect-ratio: 4 / 5;
-      display: grid;
-      place-items: center;
+    .product-carousel {
       position: relative;
+      aspect-ratio: 4 / 5;
       overflow: hidden;
-      background:
-        linear-gradient(135deg, rgba(122, 13, 42, 0.08), rgba(255,248,236,0.3)),
-        var(--azul);
+      background: rgba(122, 13, 42, 0.06);
       border-bottom: 1px solid var(--borde);
     }
 
-    .product-image img {
+    .carousel-track,
+    .carousel-slide { width: 100%; height: 100%; }
+    .carousel-slide { display: none; }
+    .carousel-slide.is-active { display: block; }
+
+    .carousel-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
 
     .photo-placeholder {
-      width: calc(100% - 38px);
-      height: calc(100% - 38px);
-      border-radius: 24px;
-      border: 1.5px dashed rgba(122, 13, 42, 0.32);
+      width: 100%;
+      height: 100%;
       display: grid;
       place-items: center;
       text-align: center;
-      padding: 22px;
-      color: rgba(122, 13, 42, 0.62);
-      font-size: 0.78rem;
+      padding: 28px;
+      color: rgba(122, 13, 42, 0.48);
+      font-size: 0.8rem;
       font-weight: 700;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      background: rgba(255, 248, 236, 0.16);
+      background:
+        linear-gradient(135deg, rgba(255,248,236,0.34), rgba(122,13,42,0.08)),
+        #9CCEFF;
     }
 
-    .badge {
+    .carousel-btn {
       position: absolute;
-      top: 16px;
-      left: 16px;
-      z-index: 2;
-      padding: 7px 11px;
+      top: 50%;
+      z-index: 3;
+      transform: translateY(-50%);
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(122, 13, 42, 0.22);
+      border-radius: 50%;
+      background: rgba(255, 248, 236, 0.82);
+      color: var(--granate);
+      font-size: 2rem;
+      line-height: 1;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: transform 180ms ease, background 180ms ease;
+    }
+
+    .carousel-btn:hover {
+      background: var(--crema);
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .carousel-prev { left: 14px; }
+    .carousel-next { right: 14px; }
+
+    .carousel-count {
+      position: absolute;
+      right: 14px;
+      bottom: 14px;
+      z-index: 3;
+      padding: 6px 10px;
       border-radius: 999px;
-      background: var(--granate);
+      background: rgba(122, 13, 42, 0.88);
       color: var(--azul-claro);
       font-size: 0.72rem;
       font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
     }
 
     .product-info {
       flex: 1;
       display: flex;
       flex-direction: column;
-      padding: 22px;
+      padding: 24px;
     }
 
-    .product-name {
-      margin: 0 0 10px;
+    .product-kicker {
+      margin: 0 0 8px;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgba(122, 13, 42, 0.58);
+    }
+
+    .product-info h3 {
+      margin: 0 0 12px;
       font-family: 'DM Serif Display', Georgia, serif;
-      font-size: 1.65rem;
-      line-height: 1;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 0.95;
       font-weight: 400;
       letter-spacing: -0.03em;
+      color: var(--granate);
     }
 
-    .product-desc {
-      margin: 0 0 22px;
-      color: rgba(122, 13, 42, 0.68);
-      font-size: 0.95rem;
-    }
-
-    .product-footer {
-      margin-top: auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    .price-placeholder {
-      color: rgba(122, 13, 42, 0.48);
-      font-size: 0.88rem;
-      font-weight: 700;
-    }
+    .product-info p { margin: 0; color: rgba(122, 13, 42, 0.72); }
 
     .product-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-height: 38px;
+      width: fit-content;
+      margin-top: 22px;
       padding: 10px 14px;
+      border: 0;
       border-radius: 999px;
       background: var(--granate);
       color: var(--azul-claro);
+      font-weight: 700;
+      font-size: 0.84rem;
       text-decoration: none;
+      cursor: pointer;
+      transition: background 180ms ease, transform 180ms ease;
+    }
+
+    .product-link:hover { background: var(--granate-oscuro); transform: translateY(-2px); }
+    .product-link.is-saved { background: var(--granate-oscuro); }
+
+    .saved-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(300px, 0.7fr);
+      gap: 28px;
+      align-items: start;
+      padding: clamp(28px, 5vw, 48px);
+      border-radius: 34px;
+      background: rgba(122, 13, 42, 0.07);
+      border: 1px solid var(--borde);
+    }
+
+    .saved-copy { max-width: 56ch; margin: 18px 0 0; color: rgba(122, 13, 42, 0.72); }
+
+    .saved-box {
+      padding: 22px;
+      border-radius: 24px;
+      background: rgba(255, 248, 236, 0.52);
+      border: 1px solid var(--borde);
+    }
+
+    .saved-empty { color: rgba(122, 13, 42, 0.58); font-size: 0.95rem; }
+
+    .saved-list {
+      display: grid;
+      gap: 10px;
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px;
+    }
+
+    .saved-list:empty { margin: 0; }
+
+    .saved-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: rgba(255, 248, 236, 0.72);
+      border: 1px solid rgba(122, 13, 42, 0.14);
+      color: var(--granate);
+      font-weight: 700;
+    }
+
+    .saved-remove {
+      border: 0;
+      background: transparent;
+      color: rgba(122, 13, 42, 0.58);
+      cursor: pointer;
       font-size: 0.82rem;
       font-weight: 700;
+    }
+
+    .saved-remove:hover { color: var(--granate); text-decoration: underline; }
+
+    .order-form {
+      display: grid;
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .order-form label {
+      display: grid;
+      gap: 7px;
+      font-size: 0.78rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: rgba(122, 13, 42, 0.62);
+    }
+
+    .order-form input {
+      width: 100%;
+      min-height: 46px;
+      border: 1px solid rgba(122, 13, 42, 0.22);
+      border-radius: 999px;
+      padding: 0 16px;
+      background: rgba(255, 248, 236, 0.8);
+      color: var(--granate);
+      font: inherit;
+      outline: none;
+    }
+
+    .order-form input:focus { border-color: var(--granate); }
+
+    .order-button {
+      min-height: 48px;
+      border: 0;
+      border-radius: 999px;
+      background: var(--granate);
+      color: var(--azul-claro);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
       white-space: nowrap;
     }
 
-    .product-link:hover { background: var(--granate-oscuro); }
+    .order-button:hover { transform: translateY(-2px); background: var(--granate-oscuro); }
 
-    .cta-band {
-      background: var(--granate);
-      color: var(--azul-claro);
+    .email-preview {
+      margin-top: 20px;
+      padding: 18px;
+      border-radius: 20px;
+      background: rgba(255, 248, 236, 0.76);
+      border: 1px solid rgba(122, 13, 42, 0.16);
     }
+
+    .email-preview-title {
+      margin: 0 0 12px;
+      font-weight: 700;
+      color: var(--granate);
+    }
+
+    .email-preview pre {
+      margin: 0;
+      white-space: pre-wrap;
+      font: inherit;
+      color: rgba(122, 13, 42, 0.72);
+      background: rgba(156, 206, 255, 0.22);
+      border-radius: 16px;
+      padding: 14px;
+    }
+
+    .email-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .order-link { text-decoration: none; }
+
+    .order-button-secondary {
+      background: rgba(122, 13, 42, 0.12);
+      color: var(--granate);
+    }
+
+    .order-button-secondary:hover { background: rgba(122, 13, 42, 0.18); }
+
+    .cta-band { background: var(--granate); color: var(--azul-claro); }
 
     .cta-inner {
       width: min(1180px, calc(100% - 32px));
@@ -366,21 +562,9 @@
       align-items: center;
     }
 
-    .cta-title {
-      margin: 0;
-      font-size: clamp(2.6rem, 6vw, 5.2rem);
-    }
-
-    .cta-text {
-      margin: 18px 0 0;
-      color: rgba(207, 224, 246, 0.72);
-      max-width: 52ch;
-    }
-
-    .cta-actions {
-      display: grid;
-      gap: 12px;
-    }
+    .cta-title { margin: 0; font-size: clamp(2.6rem, 6vw, 5.2rem); }
+    .cta-text { margin: 18px 0 0; color: rgba(207, 224, 246, 0.72); max-width: 52ch; }
+    .cta-actions { display: grid; gap: 12px; }
 
     .cta-card {
       display: block;
@@ -392,10 +576,7 @@
       transition: transform 180ms ease, background 180ms ease;
     }
 
-    .cta-card:hover {
-      transform: translateY(-3px);
-      background: rgba(207, 224, 246, 0.12);
-    }
+    .cta-card:hover { transform: translateY(-3px); background: rgba(207, 224, 246, 0.12); }
 
     .cta-label {
       display: block;
@@ -441,8 +622,14 @@
 
     @media (max-width: 980px) {
       .page-hero,
+      .section-head,
+      .products-head,
+      .saved-panel,
       .cta-inner { grid-template-columns: 1fr; }
-      .products-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 760px) {
+      .products-grid { grid-template-columns: 1fr; }
     }
 
     @media (max-width: 680px) {
@@ -451,17 +638,91 @@
       .ig-link { padding: 10px 12px; font-size: 0; gap: 0; }
       .ig-link .icon { margin: 0; }
       .page-title { font-size: clamp(3rem, 15vw, 5rem); }
-      .products-head { display: block; }
-      .products-tip { margin-top: 16px; }
-      .products-grid { grid-template-columns: 1fr; }
-      .product-image { min-height: 240px; }
-      .product-footer { align-items: flex-start; flex-direction: column; }
       .product-link { width: 100%; }
       .cta-value { font-size: 1.28rem; }
+      .email-actions { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      .product-actions {
+        align-items: stretch;
+      }
+
+      .product-actions .product-link {
+        width: 100%;
+      }
+
+      .product-price {
+        padding-top: 10px;
+      }
+    }
+    @media (max-width: 980px) {
+      .featured-carousel {
+        aspect-ratio: 1/1;
+      }
+    }
+
+
+    /* Bolsos: carrusel inicial con guardar */
+    .featured-carousel.has-save {
+      aspect-ratio: 16 / 9;
+    }
+
+    .featured-save-panel {
+      position: absolute;
+      left: clamp(16px, 3vw, 30px);
+      bottom: clamp(16px, 3vw, 30px);
+      z-index: 4;
+      max-width: min(430px, calc(100% - 32px));
+      padding: clamp(16px, 2.4vw, 24px);
+      border-radius: 26px;
+      background: rgba(255, 248, 236, 0.84);
+      border: 1px solid rgba(122, 13, 42, 0.18);
+      box-shadow: 0 18px 44px rgba(77, 7, 25, 0.18);
+      backdrop-filter: blur(12px);
+    }
+
+    .featured-save-panel .product-kicker { margin-bottom: 5px; }
+
+    .featured-save-panel h3 {
+      margin: 0 0 8px;
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 0.9;
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      color: var(--granate);
+    }
+
+    .featured-save-panel p {
+      margin: 0;
+      color: rgba(122, 13, 42, 0.72);
+    }
+
+    .featured-save-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .featured-save-actions .product-link { margin-top: 0; }
+
+    @media (max-width: 680px) {
+      .featured-carousel.has-save { aspect-ratio: 4 / 5; }
+      .featured-save-panel {
+        position: absolute;
+        right: 14px;
+        left: 14px;
+        bottom: 14px;
+        max-width: none;
+      }
     }
 
   </style>
 </head>
+
 <body>
   <header class="site-header">
     <nav class="nav" aria-label="Navegación principal">
@@ -470,11 +731,15 @@
       <ul class="nav-links">
         <li><a href="index.html#coleccion">Colección</a></li>
         <li><a href="index.html#nosotras">Nosotras</a></li>
-        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a href="#guardados">Guardados <span id="saved-count" class="saved-nav">0</span></a></li>
       </ul>
 
       <a href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener" class="ig-link" aria-label="Abrir Instagram de Paso a Paso">
-        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+          <circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+        </svg>
         @pasoapaso______
       </a>
     </nav>
@@ -485,134 +750,267 @@
       <div>
         <a class="back-link" href="index.html#coleccion">← Volver a la colección</a>
         <p class="eyebrow">Colección · Bolsos</p>
-        <h1 id="page-title" class="page-title">Bolsos de <em>crochet.</em></h1>
-        <p class="page-copy">Bolsos ligeros, coloridos y hechos a mano, punto a punto. Cada uno puede cambiar un poco según el hilo, el color y la disponibilidad.</p>
+        <h1 id="page-title" class="page-title">Bolsos de crochet <em>paso a paso.</em></h1>
+        <p class="page-copy">Bolsos de crochet hechos a mano para acompañarte en en tu día a día. Piezas únicas, tejidas con calma y llenas de color.</p>
       </div>
 
-      <aside class="page-note" aria-label="Nota sobre la colección">
-        <strong>Series pequeñas</strong>
-        <p>No producimos en masa. Si te gusta un modelo, escríbenos y vemos colores, tiempos y posibles variaciones.</p>
-      </aside>
+      
     </section>
 
-    <section class="section" aria-labelledby="products-title">
+    <section class="mix-section" aria-labelledby="mix-title">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Bolsos en uso</p>
+          <h2 id="mix-title" class="section-title">Crochet, color y <em>movimiento.</em></h2>
+        </div>
+      </div>
+
+      <div class="featured-carousel" data-carousel>
+        <div class="carousel-track">
+          <div class="carousel-slide is-active">
+            <img src="bolsos/IMG_6812.JPG" alt="bolsos izq" />
+          </div>
+          <div class="carousel-slide">
+           <img src="bolsos/IMG_6828.JPG" alt="bolsos dere" />
+          </div>
+          <div class="carousel-slide">
+           <img src="bolsos/IMG_9402.JPG" alt="bolsos azul y naranja" />
+          </div>
+          <div class="carousel-slide">
+           <img src="bolsos/IMG_7545.JPG" alt="bolsos suelo" />
+          </div>
+        </div>
+
+        <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
+        <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
+        <span class="carousel-count">1 / 6</span>
+      </div>
+    </section>
+
+    <section class="products-section" aria-labelledby="products-title">
       <div class="products-head">
         <div>
-          <p class="eyebrow">Productos</p>
-          <h2 id="products-title" class="section-title">Modelos <em>disponibles.</em></h2>
+          <p class="eyebrow">Modelos</p>
+          <h2 id="products-title" class="section-title">Elige tu <em>bolso.</em></h2>
         </div>
-        <p class="products-tip">Deja estos bloques como placeholder y cambia cada imagen cuando tengas fotos listas.</p>
+        <p class="products-tip"> Puedes guardar los modelos que te interesen y después preparar un correo con tu selección.</p>
       </div>
 
       <div class="products-grid">
-
         <article class="product-card">
-          <div class="product-image">
-            <span class="badge">Bestseller</span>
-            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
-            <img src="imagenes/bolsos/bolso-de-red-mostaza.jpg" alt="Bolso de red mostaza" />
-            -->
-            <div class="photo-placeholder">Foto pendiente</div>
+          <div class="product-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide is-active">
+                <img src="bolsos/IMG_6789.JPG" alt="Bolso Cobre de crochet en estudio" data-fallback="Bolso Cobre 1" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6833.JPG" alt="Bolso Cobre de crochet en uso, detalle lateral" data-fallback="Bolso Cobre 2" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6824.JPG" alt="Bolso Cobre llevado al hombro" data-fallback="Bolso Cobre 4" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_1409.JPG" alt="Bolso Cobre en la playa" data-fallback="Bolso Cobre 5" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_1403.JPG" alt="Bolso Cobre en look de playa" data-fallback="Bolso Cobre 6" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_0041.JPG" alt="Bolso Cobre en espejo" data-fallback="Bolso Cobre 7" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_0465.JPG" alt="Bolso Cobre en look de noche" data-fallback="Bolso Cobre 8" />
+              </div>
+            </div>
+
+            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
+            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
+            <span class="carousel-count">1 / 8</span>
           </div>
+
           <div class="product-info">
-            <h3 class="product-name">Bolso de red mostaza</h3>
-            <p class="product-desc">Tejido a mano en tono mostaza. Ligero, cómodo y con ese punto de color que cambia cualquier look.</p>
-            <div class="product-footer">
-              <span class="price-placeholder">Precio por confirmar</span>
-              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            <p class="product-kicker">Bolso de crochet</p>
+            <h3>Bolso Naranja</h3>
+            <p>Naranja con un tono dorado con brillo cálido. Una pieza con presencia, perfecta para levantar cualquier look.</p>
+            <div class="product-actions">
+              <strong class="product-price">49.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Bolso Naranja — 49.90 €">Guardar pieza</button>
             </div>
           </div>
         </article>
-
         <article class="product-card">
-          <div class="product-image">
-            
-            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
-            <img src="imagenes/bolsos/bolso-de-red-rojo.jpg" alt="Bolso de red rojo" />
-            -->
-            <div class="photo-placeholder">Foto pendiente</div>
+          <div class="product-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide is-active">
+                <img src="bolsos/IMG_6790.JPG" alt="Bolso Lima de crochet en estudio" data-fallback="Bolso Lima 1" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6836.JPG" alt="Bolso Lima llevado al hombro" data-fallback="Bolso Lima 2" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6816.JPG" alt="Detalle del Bolso Lima en uso" data-fallback="Bolso Lima 3" />
+              </div>
+        
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6791.JPG" alt="Detalle de textura del Bolso Lima" data-fallback="Bolso Lima 5" />
+              </div>
+            </div>
+
+            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
+            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
+            <span class="carousel-count">1 / 5</span>
           </div>
+
           <div class="product-info">
-            <h3 class="product-name">Bolso de red rojo</h3>
-            <p class="product-desc">Rojo vibrante, hecho para llevar lo justo y levantar un conjunto sencillo.</p>
-            <div class="product-footer">
-              <span class="price-placeholder">Precio por confirmar</span>
-              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            <p class="product-kicker">Bolso de crochet</p>
+            <h3>Bolso Lima</h3>
+            <p>Verde lima vibrante, fresco y lleno de energía. Un bolso llamativo, ligero y muy especial.</p>
+            <div class="product-actions">
+              <strong class="product-price">49.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Bolso Lima — 49.90 €">Guardar pieza</button>
             </div>
           </div>
         </article>
-
         <article class="product-card">
-          <div class="product-image">
-            
-            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
-            <img src="imagenes/bolsos/bolso-de-red-azul.jpg" alt="Bolso de red azul" />
-            -->
-            <div class="photo-placeholder">Foto pendiente</div>
+          <div class="product-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide is-active">
+                <img src="bolsos/IMG_6785.JPG" alt="Bolso Azul Eléctrico de crochet en estudio" data-fallback="Bolso Azul Eléctrico 1" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6815.JPG" alt="Bolso Azul Eléctrico presentado de frente" data-fallback="Bolso Azul Eléctrico 2" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6829.JPG" alt="Bolso Azul Eléctrico llevado al hombro" data-fallback="Bolso Azul Eléctrico 3" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6831.JPG" alt="Detalle del Bolso Azul Eléctrico en mano" data-fallback="Bolso Azul Eléctrico 4" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6819.JPG" alt="Etiqueta interior del Bolso Azul Eléctrico" data-fallback="Bolso Azul Eléctrico 5" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_4634.JPG" alt="Bolso Azul Eléctrico en look de calle" data-fallback="Bolso Azul Eléctrico 6" />
+              </div>
+            </div>
+
+            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
+            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
+            <span class="carousel-count">1 / 6</span>
           </div>
+
           <div class="product-info">
-            <h3 class="product-name">Bolso de red azul</h3>
-            <p class="product-desc">Azul intenso y acabado artesanal. Cada pieza puede tener pequeñas diferencias.</p>
-            <div class="product-footer">
-              <span class="price-placeholder">Precio por confirmar</span>
-              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            <p class="product-kicker">Bolso de crochet</p>
+            <h3>Bolso Azul Eléctrico</h3>
+            <p>Azul intenso con acabado brillante. Fuerza, color y ese punto divertido que transforma un básico.</p>
+            <div class="product-actions">
+              <strong class="product-price">49.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Bolso Azul Eléctrico — 49.90 €">Guardar pieza</button>
             </div>
           </div>
         </article>
-
         <article class="product-card">
-          <div class="product-image">
-            <span class="badge">Nuevo</span>
-            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
-            <img src="imagenes/bolsos/bolso-con-lentejuelas.jpg" alt="Bolso con lentejuelas" />
-            -->
-            <div class="photo-placeholder">Foto pendiente</div>
+          <div class="product-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide is-active">
+                <img src="bolsos/IMG_6803.JPG" alt="Bolso Rojo Rubí de crochet en estudio" data-fallback="Bolso Rojo Rubí 1" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6821.JPG" alt="Bolso Rojo Rubí llevado al hombro" data-fallback="Bolso Rojo Rubí 2" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6820.JPG" alt="Detalle del asa del Bolso Rojo Rubí" data-fallback="Bolso Rojo Rubí 3" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6814.JPG" alt="Bolso Rojo Rubí levantado en alto" data-fallback="Bolso Rojo Rubí 4" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6788.JPG" alt="Detalle de textura del Bolso Rojo Rubí" data-fallback="Bolso Rojo Rubí 5" />
+              </div>
+            </div>
+
+            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
+            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
+            <span class="carousel-count">1 / 5</span>
           </div>
+
           <div class="product-info">
-            <h3 class="product-name">Bolso con lentejuelas</h3>
-            <p class="product-desc">Crochet con brillo para noches de verano, planes especiales o looks con personalidad.</p>
-            <div class="product-footer">
-              <span class="price-placeholder">Precio por confirmar</span>
-              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            <p class="product-kicker">Bolso de crochet</p>
+            <h3>Bolso Rojo San valentín</h3>
+            <p>Rojo brillante con interior rosa. Alegre, atrevido y pensado para looks con mucho carácter.</p>
+            <div class="product-actions">
+              <strong class="product-price">49.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Bolso Rojo Rubí — 49.90 €">Guardar pieza</button>
             </div>
           </div>
         </article>
-
         <article class="product-card">
-          <div class="product-image">
-            
-            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
-            <img src="imagenes/bolsos/bolso-de-mano-gris.jpg" alt="Bolso de mano gris" />
-            -->
-            <div class="photo-placeholder">Foto pendiente</div>
+          <div class="product-carousel" data-carousel>
+            <div class="carousel-track">
+              <div class="carousel-slide is-active">
+                <img src="bolsos/IMG_6818.JPG" alt="Bolso Plata de crochet en estudio" data-fallback="Bolso Plata 1" />
+              </div>
+              <div class="carousel-slide">
+                <img src="bolsos/IMG_6787.JPG" alt="Detalle de etiqueta del Bolso Plata" data-fallback="Bolso Plata 2" />
+              </div>
+            </div>
+
+            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
+            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
+            <span class="carousel-count">1 / 2</span>
           </div>
+
           <div class="product-info">
-            <h3 class="product-name">Bolso de mano gris</h3>
-            <p class="product-desc">Formato más compacto, tejido con calma y pensado para acompañarte sin parecer uno más.</p>
-            <div class="product-footer">
-              <span class="price-placeholder">Precio por confirmar</span>
-              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+            <p class="product-kicker">Bolso de crochet</p>
+            <h3>Bolso Plata</h3>
+            <p>Plata metalizado con acabado elegante. Una versión más neutra, fácil de combinar y muy especial.</p>
+            <div class="product-actions">
+              <strong class="product-price">49.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Bolso Plata — 49.90 €">Guardar pieza</button>
             </div>
           </div>
         </article>
+      </div>
+    </section>
 
-        <article class="product-card">
-          <div class="product-image">
-            <span class="badge">A medida</span>
-            <!-- Cuando tengas la foto, sustituye el bloque .photo-placeholder por:
-            <img src="imagenes/bolsos/bolso-personalizado.jpg" alt="Bolso personalizado" />
-            -->
-            <div class="photo-placeholder">Foto pendiente</div>
-          </div>
-          <div class="product-info">
-            <h3 class="product-name">Bolso personalizado</h3>
-            <p class="product-desc">Cuéntanos qué color te gustaría y vemos si podemos prepararlo según disponibilidad.</p>
-            <div class="product-footer">
-              <span class="price-placeholder">Precio por confirmar</span>
-              <a class="product-link" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">Pedir por Instagram</a>
+    <section id="guardados" class="saved-section" aria-labelledby="saved-title">
+      <div class="saved-panel">
+        <div>
+          <p class="eyebrow">Tus guardados</p>
+          <h2 id="saved-title" class="section-title">Piezas que te <em>gustan.</em></h2>
+          <p class="saved-copy">
+            Guarda los bolsos de crochet que te interesan y mándanos un correo con tu selección. Te responderemos con disponibilidad, colores y tiempos de preparación.
+          </p>
+        </div>
+
+        <div class="saved-box">
+          <div id="saved-empty" class="saved-empty">Todavía no has guardado ningún bolso.</div>
+          <ul id="saved-list" class="saved-list" aria-label="Bolsos guardados"></ul>
+
+          <form id="order-form" class="order-form">
+            <label>
+              Tu nombre
+              <input type="text" id="customer-name" name="name" placeholder="Ej. Carmen" required />
+            </label>
+
+            <label>
+              Tu email
+              <input type="email" id="customer-email" name="email" placeholder="Ej. carmen@email.com" required />
+            </label>
+
+            <button class="order-button" type="submit">Preparar email de pedido</button>
+          </form>
+
+          <div id="email-preview" class="email-preview" hidden>
+            <p class="email-preview-title">Email preparado</p>
+            <pre id="email-body-preview"></pre>
+
+            <div class="email-actions">
+              <a id="open-email-link" class="order-button order-link" href="#">Enviar</a>
+              <button id="copy-email-button" class="order-button order-button-secondary" type="button">Copiar</button>
             </div>
           </div>
-        </article>
+        </div>
       </div>
     </section>
 
@@ -620,19 +1018,19 @@
       <div class="cta-inner">
         <div>
           <p class="eyebrow">Pedidos</p>
-          <h2 id="cta-title" class="cta-title">¿Hacemos un bolso <em>para ti?</em></h2>
-          <p class="cta-text">Escríbenos con el modelo que te gusta. Te contamos disponibilidad, colores y tiempo de preparación.</p>
+          <h2 id="cta-title" class="cta-title">¿Te hacemos un bolso <em class="cta-highlight">con tu color?</em></h2>
+          <p class="cta-text">Guarda tus favoritos o escríbenos directamente. Te contamos disponibilidad de hilos, colores y tiempo de preparación.</p>
         </div>
 
         <div class="cta-actions">
+          <a class="cta-card" href="#guardados">
+            <span class="cta-label">Selección</span>
+            <span class="cta-value">Ver guardados</span>
+          </a>
+
           <a class="cta-card" href="https://www.instagram.com/pasoapaso______/" target="_blank" rel="noopener">
             <span class="cta-label">Instagram</span>
             <span class="cta-value">@pasoapaso______</span>
-          </a>
-
-          <a class="cta-card" href="mailto:pasoapasoacc@gmail.com">
-            <span class="cta-label">Email</span>
-            <span class="cta-value">pasoapasoacc@gmail.com</span>
           </a>
         </div>
       </div>
@@ -645,5 +1043,160 @@
       <span>Accesorios hechos a mano · Series pequeñas · No hay dos iguales</span>
     </div>
   </footer>
+
+
+  <script>
+    document.querySelectorAll('img[data-fallback]').forEach((img) => {
+      img.addEventListener('error', () => {
+        const fallback = document.createElement('div');
+        fallback.className = 'photo-placeholder';
+        fallback.textContent = img.dataset.fallback || 'Foto próximamente';
+        img.replaceWith(fallback);
+      }, { once: true });
+    });
+
+    document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+      const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+      const prev = carousel.querySelector('[data-carousel-prev]');
+      const next = carousel.querySelector('[data-carousel-next]');
+      const count = carousel.querySelector('.carousel-count');
+      let current = 0;
+
+      function showSlide(index) {
+        current = (index + slides.length) % slides.length;
+        slides.forEach((slide, slideIndex) => {
+          slide.classList.toggle('is-active', slideIndex === current);
+        });
+        if (count) count.textContent = `${current + 1} / ${slides.length}`;
+      }
+
+      if (prev) prev.addEventListener('click', () => showSlide(current - 1));
+      if (next) next.addEventListener('click', () => showSlide(current + 1));
+      showSlide(0);
+    });
+
+    const savedKey = 'pasoapaso-bolsos-guardados';
+    const saveButtons = Array.from(document.querySelectorAll('.product-save'));
+    const savedList = document.getElementById('saved-list');
+    const savedEmpty = document.getElementById('saved-empty');
+    const savedCount = document.getElementById('saved-count');
+    const orderForm = document.getElementById('order-form');
+    const emailPreview = document.getElementById('email-preview');
+    const emailBodyPreview = document.getElementById('email-body-preview');
+    const openEmailLink = document.getElementById('open-email-link');
+    const copyEmailButton = document.getElementById('copy-email-button');
+
+    function getSavedItems() {
+      try { return JSON.parse(localStorage.getItem(savedKey)) || []; }
+      catch (error) { return []; }
+    }
+
+    function setSavedItems(items) {
+      localStorage.setItem(savedKey, JSON.stringify(items));
+    }
+
+    function renderSavedItems() {
+      const items = getSavedItems();
+      if (savedList) savedList.innerHTML = '';
+      if (savedCount) savedCount.textContent = items.length;
+      if (savedEmpty) savedEmpty.style.display = items.length === 0 ? 'block' : 'none';
+
+      if (savedList) {
+        items.forEach((item) => {
+          const li = document.createElement('li');
+          li.className = 'saved-item';
+          const name = document.createElement('span');
+          name.textContent = item;
+          const remove = document.createElement('button');
+          remove.type = 'button';
+          remove.className = 'saved-remove';
+          remove.textContent = 'Quitar';
+          remove.addEventListener('click', () => {
+            setSavedItems(getSavedItems().filter((savedItem) => savedItem !== item));
+            renderSavedItems();
+          });
+          li.appendChild(name);
+          li.appendChild(remove);
+          savedList.appendChild(li);
+        });
+      }
+
+      saveButtons.forEach((button) => {
+        const product = button.dataset.product;
+        const isSaved = items.includes(product);
+        button.classList.toggle('is-saved', isSaved);
+        button.textContent = isSaved ? 'Guardado ✓' : 'Guardar pieza';
+      });
+    }
+
+    saveButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        const product = button.dataset.product;
+        const items = getSavedItems();
+        if (items.includes(product)) {
+          setSavedItems(items.filter((item) => item !== product));
+        } else {
+          setSavedItems([...items, product]);
+        }
+        renderSavedItems();
+      });
+    });
+
+    if (orderForm) {
+      orderForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const items = getSavedItems();
+        const name = document.getElementById('customer-name').value.trim();
+        const email = document.getElementById('customer-email').value.trim();
+
+        if (items.length === 0) {
+          alert('Guarda al menos un bolso antes de preparar el email.');
+          return;
+        }
+        if (!name || !email) {
+          alert('Rellena tu nombre y tu email.');
+          return;
+        }
+
+        const subject = 'Pedido de bolsos de crochet — Paso a Paso';
+        const body = `Hola!
+
+Me llamo ${name} y mi correo es ${email}.
+
+Me gustaría hacer un pedido de las piezas que he guardado:
+
+${items.map((item) => `- ${item}`).join('\n')}
+
+¿Me podéis decir disponibilidad, colores y tiempo de preparación?
+
+Gracias!`;
+
+        const mailto = `mailto:pasoapasoacc@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+        if (emailPreview && emailBodyPreview && openEmailLink) {
+          emailPreview.hidden = false;
+          emailBodyPreview.textContent = body;
+          openEmailLink.href = mailto;
+        }
+      });
+    }
+
+    if (copyEmailButton) {
+      copyEmailButton.addEventListener('click', async () => {
+        const text = emailBodyPreview ? emailBodyPreview.textContent : '';
+        if (!text) return;
+        try {
+          await navigator.clipboard.writeText(text);
+          copyEmailButton.textContent = 'Copiado ✓';
+          setTimeout(() => { copyEmailButton.textContent = 'Copiar'; }, 1600);
+        } catch (error) {
+          alert('No se ha podido copiar automáticamente. Puedes seleccionar el texto y copiarlo manualmente.');
+        }
+      });
+    }
+
+    renderSavedItems();
+  </script>
+
 </body>
 </html>

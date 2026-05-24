@@ -18,7 +18,7 @@
       --azul-claro: #cfe0f6;
       --granate: #7a0d2a;
       --granate-oscuro: #4d0719;
-      --granate-suave: #9b1637;
+      --granate-suave: #c86c83;
       --crema: #fff8ec;
       --tinta: #24030c;
       --borde: rgba(122, 13, 42, 0.18);
@@ -299,7 +299,105 @@
       object-fit: cover;
     }
 
-    .photo-placeholder {
+    /* COMBOS DENTRO DE PÁGINAS DE INVIERNO */
+
+  .combo-section {
+    width: min(1180px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 0 0 clamp(56px, 7vw, 86px);
+  }
+
+  .combo-panel {
+    padding: clamp(22px, 4vw, 34px);
+    border-radius: 34px;
+    background: rgba(122, 13, 42, 0.07);
+    border: 1px solid var(--borde);
+    box-shadow: 0 16px 42px rgba(77, 7, 25, 0.08);
+  }
+
+  .combo-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(240px, 0.55fr);
+    gap: 24px;
+    align-items: end;
+    margin-bottom: 20px;
+  }
+
+  .combo-copy {
+    margin: 0;
+    color: rgba(122, 13, 42, 0.68);
+    font-size: 0.98rem;
+  }
+
+  .combo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .combo-card {
+    display: grid;
+    gap: 12px;
+    padding: 18px;
+    border-radius: 22px;
+    background: rgba(255, 248, 236, 0.72);
+    border: 1px solid rgba(122, 13, 42, 0.14);
+  }
+
+  .combo-card h3 {
+    margin: 0;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    line-height: 0.95;
+    font-weight: 400;
+    letter-spacing: -0.03em;
+    color: var(--granate);
+  }
+
+  .combo-card p {
+    margin: 0;
+    color: rgba(122, 13, 42, 0.68);
+  }
+
+  .combo-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: 4px;
+  }
+
+  .combo-price {
+    font-weight: 800;
+    color: var(--granate);
+    white-space: nowrap;
+  }
+
+  .combo-actions .product-link {
+    margin-top: 0;
+  }
+
+  @media (max-width: 900px) {
+    .combo-head {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .combo-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .combo-actions {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    .combo-actions .product-link {
+      width: 100%;
+    }
+  }
+      .photo-placeholder {
       width: 100%;
       height: 100%;
       display: grid;
@@ -923,6 +1021,40 @@
       </div>
     </section>
 
+    <section class="combo-section" aria-labelledby="combos-bufandas-title">
+      <div class="combo-panel">
+        <div class="combo-head">
+          <div>
+            <p class="eyebrow">Combos especiales</p>
+            <h2 id="combos-bufandas-title" class="section-title">Combina tu <em>bufanda.</em></h2>
+          </div>
+
+          <p class="combo-copy">
+            Packs de invierno con precio especial. Añade el combo que te guste y lo incluimos en tu selección.
+          </p>
+        </div>
+
+        <div class="combo-grid">
+          <article class="combo-card">
+            <h3>Mitones + Bufanda</h3>
+            <p>Para llevar manos y cuello calentitos, con colores que podemos combinar entre sí.</p>
+            <div class="combo-actions">
+              <strong class="combo-price">32.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Combo Mitones + Bufanda — 32.90 €" data-save-label="Añadir combo">Añadir combo</button>
+            </div>
+          </article>
+
+          <article class="combo-card">
+            <h3>Bufanda + Gorro</h3>
+            <p>Un pack suave, cómodo y hecho a mano para los días más fríos.</p>
+            <div class="combo-actions">
+              <strong class="combo-price">24.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Combo Bufanda + Gorro — 24.90 €" data-save-label="Añadir combo">Añadir combo</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
     <section id="guardados" class="saved-section" aria-labelledby="saved-title">
       <div class="saved-panel">
         <div>
@@ -934,7 +1066,7 @@
         </div>
 
         <div class="saved-box">
-          <div id="saved-empty" class="saved-empty">Todavía no has guardado ninguna pieza.</div>
+          <div id="saved-empty" class="saved-empty">Todavía no has guardado ninguna pieza o combo.</div>
           <ul id="saved-list" class="saved-list" aria-label="Piezas guardadas"></ul>
 
           <form id="order-form" class="order-form">
@@ -1066,7 +1198,7 @@
         const product = button.dataset.product;
         const isSaved = items.includes(product);
         button.classList.toggle('is-saved', isSaved);
-        button.textContent = isSaved ? 'Guardado ✓' : 'Guardar pieza';
+        button.textContent = isSaved ? 'Guardado ✓' : (button.dataset.saveLabel || 'Guardar pieza');
       });
     }
 

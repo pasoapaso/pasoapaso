@@ -17,7 +17,7 @@
       --azul-claro: #cfe0f6;
       --granate: #7a0d2a;
       --granate-oscuro: #4d0719;
-      --granate-suave: #9b1637;
+      --granate-suave: #c86c83;
       --crema: #fff8ec;
       --tinta: #24030c;
       --borde: rgba(122, 13, 42, 0.18);
@@ -300,6 +300,99 @@
       animation: scrollPulse 1s infinite;
     }
 
+    /* COMBOS INDEX — compacto sin espacio inferior */
+
+    .collection-combos.hero-combos {
+    display: block;
+    width: 100%;
+    margin: 18px 0 0;
+    padding: 16px;
+    min-height: 0 !important;
+    height: auto !important;
+    align-self: start !important;
+    border-radius: 22px;
+    background: rgba(122, 13, 42, 0.055);
+    border: 1px solid rgba(122, 13, 42, 0.14);
+    }
+
+    .hero-combos-label {
+    display: block;
+    margin: 0 0 12px;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: rgba(122, 13, 42, 0.58);
+    }
+
+    .hero-combos-list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+    }
+
+    .hero-combo-pill {
+    min-height: 78px;
+    padding: 12px 8px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: rgba(255, 248, 236, 0.78);
+    border: 1px solid rgba(122, 13, 42, 0.13);
+    text-align: center;
+    text-decoration: none;
+    color: var(--granate);
+    }
+
+    .hero-combo-pill strong {
+    font-size: 0.78rem;
+    line-height: 1.1;
+    }
+
+    .hero-combo-pill span {
+    font-size: 0.9rem;
+    line-height: 1;
+    font-weight: 800;
+    color: var(--granate-suave);
+    }
+
+    @media (max-width: 680px) {
+    .collection-combos.hero-combos {
+        padding: 10px;
+        margin: -4px 0 24px;
+        border-radius: 18px;
+    }
+
+    .hero-combos-label {
+        margin-bottom: 9px;
+        font-size: 0.56rem;
+        letter-spacing: 0.16em;
+    }
+
+    .hero-combos-list {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+    }
+
+    .hero-combo-pill {
+        min-height: 70px;
+        padding: 9px 4px;
+        border-radius: 13px;
+        gap: 5px;
+    }
+
+    .hero-combo-pill strong {
+        font-size: 0.62rem;
+        line-height: 1.05;
+    }
+
+    .hero-combo-pill span {
+        font-size: 0.72rem;
+    }
+    }
     /* SECCIONES */
 
     .section {
@@ -719,6 +812,7 @@
 
       <ul class="nav-links">
         <li><a href="#coleccion">Colección</a></li>
+        <li><a href="#combos">Combos</a></li>
         <li><a href="#nosotras">Nosotras</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
@@ -763,72 +857,93 @@
 
     <!-- COLECCIÓN -->
     <section id="coleccion" class="section" aria-labelledby="coleccion-title">
-      <div class="section-head">
+    <div class="section-head">
         <div>
-          <p class="eyebrow">Colección</p>
-          <h2 id="coleccion-title" class="section-title">Piezas <em>únicas.</em></h2>
+        <p class="eyebrow">Colección</p>
+        <h2 id="coleccion-title" class="section-title">Piezas <em>únicas.</em></h2>
         </div>
 
         <p class="section-copy">
-          Accesorios hechos con tiempo, color y pequeñas diferencias que hacen única cada pieza.
+        Accesorios hechos con tiempo, color y pequeñas diferencias que hacen única cada pieza.
         </p>
-      </div>
+    </div>
 
-      <div class="collection-grid">
+    <div class="collection-grid">
         <a class="collection-card featured" href="bolsos.html">
-          <span class="card-meta"><span>01</span><span>Best seller</span></span>
-          <span>
+        <span class="card-meta"><span>01</span><span>Best seller</span></span>
+        <span>
             <h3>Bolsos de crochet</h3>
             <p>Crochet ligero para diario, playa o mercado. Colores según disponibilidad.</p>
             <span class="card-link">Ver bolsos →</span>
-          </span>
+        </span>
         </a>
 
         <a class="collection-card" href="cinturones.html">
-          <span class="card-meta"><span>02</span><span>Nuevo</span></span>
-          <span>
+        <span class="card-meta"><span>02</span><span>Nuevo</span></span>
+        <span>
             <h3>Cinturones</h3>
             <p>Tricot con brillo y lentejuelas para dar fuerza a tus looks de verano.</p>
             <span class="card-link">Ver cinturones →</span>
-          </span>
+        </span>
         </a>
 
         <a class="collection-card" href="collares.html">
-          <span class="card-meta"><span>03</span><span>Nuevo</span></span>
-          <span>
+        <span class="card-meta"><span>03</span><span>Nuevo</span></span>
+        <span>
             <h3>Collares</h3>
             <p>Collares diferentes, coloridos y hechos para dar un toque especial al look.</p>
             <span class="card-link">Ver collares →</span>
-          </span>
+        </span>
         </a>
 
         <a class="collection-card" href="gorros.html">
-          <span class="card-meta"><span>04</span><span>Invierno</span></span>
-          <span>
+        <span class="card-meta"><span>04</span><span>Invierno</span></span>
+        <span>
             <h3>Gorros</h3>
             <p>Lana suave, colores vivos y tallas cómodas para días fríos.</p>
             <span class="card-link">Ver gorros →</span>
-          </span>
+        </span>
         </a>
 
         <a class="collection-card" href="bufandas.html">
-          <span class="card-meta"><span>05</span><span>Invierno</span></span>
-          <span>
+        <span class="card-meta"><span>05</span><span>Invierno</span></span>
+        <span>
             <h3>Bufandas</h3>
             <p>Bufandas tejidas con textura, abrigo y combinaciones de color.</p>
             <span class="card-link">Ver bufandas →</span>
-          </span>
+        </span>
         </a>
 
         <a class="collection-card" href="mitones.html">
-          <span class="card-meta"><span>06</span><span>Invierno</span></span>
-          <span>
+        <span class="card-meta"><span>06</span><span>Invierno</span></span>
+        <span>
             <h3>Mitones</h3>
             <p>Para manos calentitas sin perder comodidad ni color.</p>
             <span class="card-link">Ver mitones →</span>
-          </span>
+        </span>
         </a>
-      </div>
+    </div>
+
+    <div id="combos" class="collection-combos hero-combos" aria-label="Combos especiales">
+        <span class="hero-combos-label">Combos especiales de invierno</span>
+
+        <div class="hero-combos-list">
+        <a class="hero-combo-pill" href="mailto:pasoapasoacc@gmail.com?subject=Consulta%20combo%20Mitones%20%2B%20Bufanda&body=Hola!%0D%0A%0D%0AMe%20interesa%20el%20combo%20Mitones%20%2B%20Bufanda.%20%C2%BFMe%20pod%C3%A9is%20decir%20colores%20disponibles%20y%20tiempo%20de%20preparaci%C3%B3n?%0D%0A%0D%0AGracias!">
+            <strong>Mitones + Bufanda</strong>
+            <span>32.90€</span>
+        </a>
+
+        <a class="hero-combo-pill" href="mailto:pasoapasoacc@gmail.com?subject=Consulta%20combo%20Bufanda%20%2B%20Gorro&body=Hola!%0D%0A%0D%0AMe%20interesa%20el%20combo%20Bufanda%20%2B%20Gorro.%20%C2%BFMe%20pod%C3%A9is%20decir%20colores%20disponibles%20y%20tiempo%20de%20preparaci%C3%B3n?%0D%0A%0D%0AGracias!">
+            <strong>Bufanda + Gorro</strong>
+            <span>24.90€</span>
+        </a>
+
+        <a class="hero-combo-pill" href="mailto:pasoapasoacc@gmail.com?subject=Consulta%20combo%20Mitones%20%2B%20Gorro&body=Hola!%0D%0A%0D%0AMe%20interesa%20el%20combo%20Mitones%20%2B%20Gorro.%20%C2%BFMe%20pod%C3%A9is%20decir%20colores%20disponibles%20y%20tiempo%20de%20preparaci%C3%B3n?%0D%0A%0D%0AGracias!">
+            <strong>Mitones + Gorro</strong>
+            <span>32.90€</span>
+        </a>
+        </div>
+    </div>
     </section>
 
     <!-- NOSOTRAS -->
