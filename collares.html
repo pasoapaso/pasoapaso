@@ -4,15 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Bolsos de crochet — Paso a Paso</title>
-  <meta name="description" content="Bolsos de crochet hechos a mano por Paso a Paso. Piezas ligeras, coloridas y únicas para diario, playa o mercado." />
+  <title>Collares hechos a mano - Paso a Paso</title>
+  <meta name="description" content="Collares hechos a mano por Paso a Paso. Piezas coloridas, distintas y faciles de llevar." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700&display=swap" rel="stylesheet" />
 
   <style>
-
     :root {
       --azul: #9CCEFF;
       --azul-claro: #cfe0f6;
@@ -20,7 +19,6 @@
       --granate-oscuro: #4d0719;
       --granate-suave: #c86c83;
       --crema: #fff8ec;
-      --tinta: #24030c;
       --borde: rgba(122, 13, 42, 0.18);
       --sombra: 0 24px 70px rgba(77, 7, 25, 0.16);
       --radio: 28px;
@@ -206,7 +204,6 @@
     .page-note p { margin: 0; color: rgba(122, 13, 42, 0.68); font-size: 0.95rem; }
 
     .section,
-    .mix-section,
     .products-section,
     .saved-section {
       width: min(1180px, calc(100% - 32px));
@@ -233,7 +230,7 @@
       border: 1px solid var(--borde);
       box-shadow: var(--sombra);
       background: rgba(255, 248, 236, 0.38);
-      aspect-ratio: 1/1;
+      aspect-ratio: 16 / 9;
     }
 
     .products-grid {
@@ -243,25 +240,6 @@
       margin-top: 40px;
     }
 
-    .product-actions {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-top: auto;
-      padding-top: 22px;
-    }
-
-    .product-price {
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--granate);
-      white-space: nowrap;
-    }
-
-    .product-actions .product-link {
-      margin-top: 0;
-    }
     .product-card {
       display: flex;
       min-height: 100%;
@@ -297,23 +275,6 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-    }
-
-    .photo-placeholder {
-      width: 100%;
-      height: 100%;
-      display: grid;
-      place-items: center;
-      text-align: center;
-      padding: 28px;
-      color: rgba(122, 13, 42, 0.48);
-      font-size: 0.8rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      background:
-        linear-gradient(135deg, rgba(255,248,236,0.34), rgba(122,13,42,0.08)),
-        #9CCEFF;
     }
 
     .carousel-btn {
@@ -384,12 +345,32 @@
 
     .product-info p { margin: 0; color: rgba(122, 13, 42, 0.72); }
 
+    .product-actions {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: auto;
+      padding-top: 22px;
+    }
+
+    .product-price {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--granate);
+      white-space: nowrap;
+    }
+
+    .product-actions .product-link {
+      margin-top: 0;
+    }
+
     .product-link {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       width: fit-content;
-      margin-top: 22px;
+      margin-top: 0;
       padding: 10px 14px;
       border: 0;
       border-radius: 999px;
@@ -641,7 +622,9 @@
       .product-link { width: 100%; }
       .cta-value { font-size: 1.28rem; }
       .email-actions { grid-template-columns: 1fr; }
+      .featured-carousel { aspect-ratio: 4 / 5; }
     }
+
     @media (max-width: 680px) {
       .product-actions {
         align-items: stretch;
@@ -655,81 +638,16 @@
         padding-top: 10px;
       }
     }
-    @media (max-width: 980px) {
-      .featured-carousel {
-        aspect-ratio: 1/1;
-      }
-    }
-
-
-    /* Bolsos: carrusel inicial con guardar */
-    .featured-carousel.has-save {
-      aspect-ratio: 16 / 9;
-    }
-
-    .featured-save-panel {
-      position: absolute;
-      left: clamp(16px, 3vw, 30px);
-      bottom: clamp(16px, 3vw, 30px);
-      z-index: 4;
-      max-width: min(430px, calc(100% - 32px));
-      padding: clamp(16px, 2.4vw, 24px);
-      border-radius: 26px;
-      background: rgba(255, 248, 236, 0.84);
-      border: 1px solid rgba(122, 13, 42, 0.18);
-      box-shadow: 0 18px 44px rgba(77, 7, 25, 0.18);
-      backdrop-filter: blur(12px);
-    }
-
-    .featured-save-panel .product-kicker { margin-bottom: 5px; }
-
-    .featured-save-panel h3 {
-      margin: 0 0 8px;
-      font-family: 'DM Serif Display', Georgia, serif;
-      font-size: clamp(2rem, 4vw, 3.2rem);
-      line-height: 0.9;
-      font-weight: 400;
-      letter-spacing: -0.03em;
-      color: var(--granate);
-    }
-
-    .featured-save-panel p {
-      margin: 0;
-      color: rgba(122, 13, 42, 0.72);
-    }
-
-    .featured-save-actions {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      margin-top: 18px;
-      flex-wrap: wrap;
-    }
-
-    .featured-save-actions .product-link { margin-top: 0; }
-
-    @media (max-width: 680px) {
-      .featured-carousel.has-save { aspect-ratio: 4 / 5; }
-      .featured-save-panel {
-        position: absolute;
-        right: 14px;
-        left: 14px;
-        bottom: 14px;
-        max-width: none;
-      }
-    }
-
   </style>
 </head>
 
 <body>
   <header class="site-header">
-    <nav class="nav" aria-label="Navegación principal">
+    <nav class="nav" aria-label="Navegacion principal">
       <a href="index.html" class="brand">Paso a Paso</a>
 
       <ul class="nav-links">
-        <li><a href="index.html#coleccion">Colección</a></li>
+        <li><a href="index.html#coleccion">Coleccion</a></li>
         <li><a href="index.html#nosotras">Nosotras</a></li>
         <li><a href="#guardados">Guardados <span id="saved-count" class="saved-nav">0</span></a></li>
       </ul>
@@ -748,228 +666,76 @@
   <main>
     <section class="page-hero" aria-labelledby="page-title">
       <div>
-        <a class="back-link" href="index.html#coleccion">← Volver a la colección</a>
-        <p class="eyebrow">Colección · Bolsos</p>
-        <h1 id="page-title" class="page-title">Bolsos de crochet <em>paso a paso.</em></h1>
-        <p class="page-copy">Bolsos de crochet hechos a mano para acompañarte en en tu día a día. Piezas únicas, tejidas con calma y llenas de color.</p>
+        <a class="back-link" href="index.html#coleccion">← Volver a la coleccion</a>
+        <p class="eyebrow">Collares</p>
+        <h1 id="page-title" class="page-title">Collares con color <em>paso a paso.</em></h1>
+        <p class="page-copy">
+          Piezas hechas a mano con cuentas, flores, cordones y combinaciones alegres para dar un toque especial al look.
+        </p>
       </div>
 
-      
     </section>
 
-    <section class="mix-section" aria-labelledby="mix-title">
-      <div class="section-head">
-        <div>
-          <p class="eyebrow">Bolsos en uso</p>
-          <h2 id="mix-title" class="section-title">Crochet, color y <em>movimiento.</em></h2>
-        </div>
-      </div>
-
-      <div class="featured-carousel" data-carousel>
-        <div class="carousel-track">
-          <div class="carousel-slide is-active">
-            <img src="bolsos/IMG_6812.JPG" alt="bolsos izq" />
-          </div>
-          <div class="carousel-slide">
-           <img src="bolsos/IMG_6828.JPG" alt="bolsos dere" />
-          </div>
-          <div class="carousel-slide">
-           <img src="bolsos/IMG_9402.JPG" alt="bolsos azul y naranja" />
-          </div>
-          <div class="carousel-slide">
-           <img src="bolsos/IMG_7545.JPG" alt="bolsos suelo" />
-          </div>
-        </div>
-
-        <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
-        <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
-        <span class="carousel-count">1 / 6</span>
-      </div>
-    </section>
+   
 
     <section class="products-section" aria-labelledby="products-title">
       <div class="products-head">
         <div>
           <p class="eyebrow">Modelos</p>
-          <h2 id="products-title" class="section-title">Elige tu <em>bolso.</em></h2>
+          <h2 id="products-title" class="section-title">Elige tu <em>collar.</em></h2>
         </div>
-        <p class="products-tip"> Puedes guardar los modelos que te interesen y después preparar un correo con tu selección.</p>
+        <p class="products-tip">Puedes guardar las piezas que te interesen y despues preparar un correo con tu seleccion.</p>
       </div>
 
       <div class="products-grid">
         <article class="product-card">
           <div class="product-carousel" data-carousel>
             <div class="carousel-track">
-              <div class="carousel-slide is-active">
-                <img src="bolsos/IMG_6789.JPG" alt="Bolso Cobre de crochet en estudio" data-fallback="Bolso Cobre 1" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6833.JPG" alt="Bolso Cobre de crochet en uso, detalle lateral" data-fallback="Bolso Cobre 2" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6824.JPG" alt="Bolso Cobre llevado al hombro" data-fallback="Bolso Cobre 4" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_1409.JPG" alt="Bolso Cobre en la playa" data-fallback="Bolso Cobre 5" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_1403.JPG" alt="Bolso Cobre en look de playa" data-fallback="Bolso Cobre 6" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_0041.JPG" alt="Bolso Cobre en espejo" data-fallback="Bolso Cobre 7" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_0465.JPG" alt="Bolso Cobre en look de noche" data-fallback="Bolso Cobre 8" />
-              </div>
-            </div>
-
-            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
-            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
-            <span class="carousel-count">1 / 8</span>
+              <div class="carousel-slide"><img src="collares/IMG_5122.JPG" alt="Detalle del collar Flor Terracota" /></div>
+              <div class="carousel-slide is-active"><img src="collares/IMG_5124.JPG" alt="Collar Flor Terracota puesto" /></div>            </div>
+            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">&#8249;</button>
+            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">&#8250;</button>
+            <span class="carousel-count">1 / 3</span>
           </div>
 
           <div class="product-info">
-            <p class="product-kicker">Bolso de crochet</p>
-            <h3>Bolso Naranja</h3>
-            <p>Naranja con un tono dorado con brillo cálido. Una pieza con presencia, perfecta para levantar cualquier look.</p>
+            <p class="product-kicker">Collar</p>
+            <h3>Collar Flor Terracota</h3>
+            <p>Cordon verde con cuentas y flor terracota. Tiene un aire natural, especial y muy facil de llevar.</p>
             <div class="product-actions">
-              <strong class="product-price">44.90 €</strong>
-              <button class="product-link product-save" type="button" data-product="Bolso Naranja — 44.90 €">Guardar pieza</button>
+              <strong class="product-price">9.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Collar Flor Terracota - 9.90 €">Guardar pieza</button>
             </div>
           </div>
         </article>
+
         <article class="product-card">
           <div class="product-carousel" data-carousel>
             <div class="carousel-track">
-              <div class="carousel-slide is-active">
-                <img src="bolsos/IMG_6790.JPG" alt="Bolso Lima de crochet en estudio" data-fallback="Bolso Lima 1" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6836.JPG" alt="Bolso Lima llevado al hombro" data-fallback="Bolso Lima 2" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6816.JPG" alt="Detalle del Bolso Lima en uso" data-fallback="Bolso Lima 3" />
-              </div>
+              <div class="carousel-slide is-active"><img src="collares/IMG_5054.JPG" alt="Collares de cuentas en azul, amarillo y naranja" /></div>
+              <div class="carousel-slide"><img src="collares/IMG_5042.JPG" alt="Collar de cuentas sobre madera" /></div>
+              <div class="carousel-slide"><img src="collares/IMG_5058.JPG" alt="Detalle de collar de cuentas azul-naranja" /></div>
+              <div class="carousel-slide"><img src="collares/IMG_5071.JPG" alt="Detalle de collar de cuentas naranja-amarillo" /></div>
+              <div class="carousel-slide"><img src="collares/IMG_5083.JPG" alt="Detalle de collar de cuentas azul-amarillo" /></div>
+            </div>
+            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">&#8249;</button>
+            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">&#8250;</button>
+            <span class="carousel-count">1 / 3</span>
+          </div>
+
+          <div class="product-info">
+            <p class="product-kicker">Collar</p>
+            <h3>Collar Melones</h3>
+            <p>Cuentas azules, amarillas y/o naranjas con contraste claro. Un toque fresco, luminoso y diferente para verano. ¡Pídenos la combinación que más te guste!</p>
+            <div class="product-actions">
+              <strong class="product-price">9.90 €</strong>
+              <button class="product-link product-save" type="button" data-product="Collar Melones - 9.90 €">Guardar pieza</button>
+            </div>
+          </div>
+        </article>
+
         
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6791.JPG" alt="Detalle de textura del Bolso Lima" data-fallback="Bolso Lima 5" />
-              </div>
-            </div>
 
-            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
-            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
-            <span class="carousel-count">1 / 5</span>
-          </div>
-
-          <div class="product-info">
-            <p class="product-kicker">Bolso de crochet</p>
-            <h3>Bolso Lima</h3>
-            <p>Verde lima vibrante, fresco y lleno de energía. Un bolso llamativo, ligero y muy especial.</p>
-            <div class="product-actions">
-              <strong class="product-price">44.90 €</strong>
-              <button class="product-link product-save" type="button" data-product="Bolso Lima — 44.90 €">Guardar pieza</button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-carousel" data-carousel>
-            <div class="carousel-track">
-              <div class="carousel-slide is-active">
-                <img src="bolsos/IMG_6785.JPG" alt="Bolso Azul Eléctrico de crochet en estudio" data-fallback="Bolso Azul Eléctrico 1" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6815.JPG" alt="Bolso Azul Eléctrico presentado de frente" data-fallback="Bolso Azul Eléctrico 2" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6829.JPG" alt="Bolso Azul Eléctrico llevado al hombro" data-fallback="Bolso Azul Eléctrico 3" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6831.JPG" alt="Detalle del Bolso Azul Eléctrico en mano" data-fallback="Bolso Azul Eléctrico 4" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6819.JPG" alt="Etiqueta interior del Bolso Azul Eléctrico" data-fallback="Bolso Azul Eléctrico 5" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_4634.JPG" alt="Bolso Azul Eléctrico en look de calle" data-fallback="Bolso Azul Eléctrico 6" />
-              </div>
-            </div>
-
-            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
-            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
-            <span class="carousel-count">1 / 6</span>
-          </div>
-
-          <div class="product-info">
-            <p class="product-kicker">Bolso de crochet</p>
-            <h3>Bolso Azul Eléctrico</h3>
-            <p>Azul intenso con acabado brillante. Fuerza, color y ese punto divertido que transforma un básico.</p>
-            <div class="product-actions">
-              <strong class="product-price">44.90 €</strong>
-              <button class="product-link product-save" type="button" data-product="Bolso Azul Eléctrico — 44.90 €">Guardar pieza</button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-carousel" data-carousel>
-            <div class="carousel-track">
-              <div class="carousel-slide is-active">
-                <img src="bolsos/IMG_6803.JPG" alt="Bolso Rojo Rubí de crochet en estudio" data-fallback="Bolso Rojo Rubí 1" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6821.JPG" alt="Bolso Rojo Rubí llevado al hombro" data-fallback="Bolso Rojo Rubí 2" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6820.JPG" alt="Detalle del asa del Bolso Rojo Rubí" data-fallback="Bolso Rojo Rubí 3" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6814.JPG" alt="Bolso Rojo Rubí levantado en alto" data-fallback="Bolso Rojo Rubí 4" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6788.JPG" alt="Detalle de textura del Bolso Rojo Rubí" data-fallback="Bolso Rojo Rubí 5" />
-              </div>
-            </div>
-
-            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
-            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
-            <span class="carousel-count">1 / 5</span>
-          </div>
-
-          <div class="product-info">
-            <p class="product-kicker">Bolso de crochet</p>
-            <h3>Bolso Rojo San valentín</h3>
-            <p>Rojo brillante con interior rosa. Alegre, atrevido y pensado para looks con mucho carácter.</p>
-            <div class="product-actions">
-              <strong class="product-price">44.90 €</strong>
-              <button class="product-link product-save" type="button" data-product="Bolso Rojo Rubí — 44.90 €">Guardar pieza</button>
-            </div>
-          </div>
-        </article>
-        <article class="product-card">
-          <div class="product-carousel" data-carousel>
-            <div class="carousel-track">
-              <div class="carousel-slide is-active">
-                <img src="bolsos/IMG_6818.JPG" alt="Bolso Plata de crochet en estudio" data-fallback="Bolso Plata 1" />
-              </div>
-              <div class="carousel-slide">
-                <img src="bolsos/IMG_6787.JPG" alt="Detalle de etiqueta del Bolso Plata" data-fallback="Bolso Plata 2" />
-              </div>
-            </div>
-
-            <button class="carousel-btn carousel-prev" type="button" data-carousel-prev aria-label="Imagen anterior">‹</button>
-            <button class="carousel-btn carousel-next" type="button" data-carousel-next aria-label="Imagen siguiente">›</button>
-            <span class="carousel-count">1 / 2</span>
-          </div>
-
-          <div class="product-info">
-            <p class="product-kicker">Bolso de crochet</p>
-            <h3>Bolso Plata</h3>
-            <p>Plata metalizado con acabado elegante. Una versión más neutra, fácil de combinar y muy especial.</p>
-            <div class="product-actions">
-              <strong class="product-price">44.90 €</strong>
-              <button class="product-link product-save" type="button" data-product="Bolso Plata — 44.90 €">Guardar pieza</button>
-            </div>
-          </div>
-        </article>
       </div>
     </section>
 
@@ -979,23 +745,23 @@
           <p class="eyebrow">Tus guardados</p>
           <h2 id="saved-title" class="section-title">Piezas que te <em>gustan.</em></h2>
           <p class="saved-copy">
-            Guarda los bolsos de crochet que te interesan y mándanos un correo con tu selección. Te responderemos con disponibilidad, colores y tiempos de preparación.
+            Guarda los collares que te interesan y mandanos un correo con tu seleccion. No es una compra automatica: te responderemos con disponibilidad y precio.
           </p>
         </div>
 
         <div class="saved-box">
-          <div id="saved-empty" class="saved-empty">Todavía no has guardado ningún bolso.</div>
-          <ul id="saved-list" class="saved-list" aria-label="Bolsos guardados"></ul>
+          <div id="saved-empty" class="saved-empty">Todavia no has guardado ningun collar.</div>
+          <ul id="saved-list" class="saved-list" aria-label="Collares guardados"></ul>
 
           <form id="order-form" class="order-form">
             <label>
               Tu nombre
-              <input type="text" id="customer-name" name="name" placeholder="Ej. Carmen" required />
+              <input type="text" id="customer-name" name="name" placeholder="Ej. Paula" required />
             </label>
 
             <label>
               Tu email
-              <input type="email" id="customer-email" name="email" placeholder="Ej. carmen@email.com" required />
+              <input type="email" id="customer-email" name="email" placeholder="Ej. paula@email.com" required />
             </label>
 
             <button class="order-button" type="submit">Preparar email de pedido</button>
@@ -1018,13 +784,13 @@
       <div class="cta-inner">
         <div>
           <p class="eyebrow">Pedidos</p>
-          <h2 id="cta-title" class="cta-title">¿Te hacemos un bolso <em class="cta-highlight">con tu color?</em></h2>
-          <p class="cta-text">Guarda tus favoritos o escríbenos directamente. Te contamos disponibilidad de hilos, colores y tiempo de preparación.</p>
+          <h2 id="cta-title" class="cta-title">Te hacemos un collar <em class="cta-highlight">con tu color.</em></h2>
+          <p class="cta-text">Guarda tus favoritos o escribenos directamente. Te contamos disponibilidad, combinaciones y tiempo de preparacion.</p>
         </div>
 
         <div class="cta-actions">
           <a class="cta-card" href="#guardados">
-            <span class="cta-label">Selección</span>
+            <span class="cta-label">Seleccion</span>
             <span class="cta-value">Ver guardados</span>
           </a>
 
@@ -1040,21 +806,11 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <span class="footer-brand">Paso a Paso</span>
-      <span>Accesorios hechos a mano · Series pequeñas · No hay dos iguales</span>
+      <span>Accesorios hechos a mano - Series pequenas - No hay dos iguales</span>
     </div>
   </footer>
 
-
   <script>
-    document.querySelectorAll('img[data-fallback]').forEach((img) => {
-      img.addEventListener('error', () => {
-        const fallback = document.createElement('div');
-        fallback.className = 'photo-placeholder';
-        fallback.textContent = img.dataset.fallback || 'Foto próximamente';
-        img.replaceWith(fallback);
-      }, { once: true });
-    });
-
     document.querySelectorAll('[data-carousel]').forEach((carousel) => {
       const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
       const prev = carousel.querySelector('[data-carousel-prev]');
@@ -1075,7 +831,7 @@
       showSlide(0);
     });
 
-    const savedKey = 'pasoapaso-bolsos-guardados';
+    const savedKey = 'pasoapaso-collares-guardados';
     const saveButtons = Array.from(document.querySelectorAll('.product-save'));
     const savedList = document.getElementById('saved-list');
     const savedEmpty = document.getElementById('saved-empty');
@@ -1125,7 +881,7 @@
         const product = button.dataset.product;
         const isSaved = items.includes(product);
         button.classList.toggle('is-saved', isSaved);
-        button.textContent = isSaved ? 'Guardado ✓' : 'Guardar pieza';
+        button.textContent = isSaved ? 'Guardado' : 'Guardar pieza';
       });
     }
 
@@ -1150,7 +906,7 @@
         const email = document.getElementById('customer-email').value.trim();
 
         if (items.length === 0) {
-          alert('Guarda al menos un bolso antes de preparar el email.');
+          alert('Guarda al menos un collar antes de preparar el email.');
           return;
         }
         if (!name || !email) {
@@ -1158,16 +914,16 @@
           return;
         }
 
-        const subject = 'Pedido de bolsos de crochet — Paso a Paso';
+        const subject = 'Pedido de collares - Paso a Paso';
         const body = `Hola!
 
 Me llamo ${name} y mi correo es ${email}.
 
-Me gustaría hacer un pedido de las piezas que he guardado:
+Me gustaria consultar estas piezas:
 
 ${items.map((item) => `- ${item}`).join('\n')}
 
-¿Me podéis decir disponibilidad, colores y tiempo de preparación?
+Me podeis decir disponibilidad, precio y tiempo de preparacion?
 
 Gracias!`;
 
@@ -1187,16 +943,15 @@ Gracias!`;
         if (!text) return;
         try {
           await navigator.clipboard.writeText(text);
-          copyEmailButton.textContent = 'Copiado ✓';
+          copyEmailButton.textContent = 'Copiado';
           setTimeout(() => { copyEmailButton.textContent = 'Copiar'; }, 1600);
         } catch (error) {
-          alert('No se ha podido copiar automáticamente. Puedes seleccionar el texto y copiarlo manualmente.');
+          alert('No se ha podido copiar automaticamente. Puedes seleccionar el texto y copiarlo manualmente.');
         }
       });
     }
 
     renderSavedItems();
   </script>
-
 </body>
 </html>
